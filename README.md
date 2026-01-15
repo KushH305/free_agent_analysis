@@ -1,30 +1,55 @@
-NBA 2026 Free Agent Backup PG Analysis - Kush Havinal
+# NBA 2026 Free Agent Backup PG Analysis
 
-This project aims to identify optimal backup point guard (PG) free agent targets for the 2026 NBA season, operating under a specified salary cap of $18 million. 
-The analysis focuses on players proficient in pick-and-roll (PnR) offense and effective shooting off the dribble, while also considering age and contract value for long-term strategic fit.
+**Author:** Kush Havinal
 
-Data Sources
-Spotrac.com: Used to obtain a list of 2026 free agent guards and their projected salaries.
-NBA API (nba_api): Utilized to retrieve detailed player statistics for the 2024-25 season, including:
-SynergyPlayTypes: For pick-and-roll (PnR) ball handler statistics (Points Per Possession, Possession Percentage, Turnover Percentage, Field Goal Percentage).
-PlayerDashPtShots: For pull-up shooting splits (3-point percentage, 2-point percentage, frequency) and self-creation rates (shots after high dribble counts).
-LeagueDashPlayerStats: For basic player information such as age, games played, and minutes per game.
+## Overview
 
-Methodology
-Salary Filtering: Free agents were initially filtered to include only those with projected salaries at or below the $18 million cap.
-Player ID Matching: Identified NBA player IDs for the filtered free agents using the nba_api to facilitate data retrieval. Fuzzy matching and manual corrections were applied for improved accuracy.
-Statistical Data Collection: Fetched PnR and pull-up shooting statistics for eligible players from the nba_api for the 2024-25 season.
-Data Merging and Cleaning: Combined salary data with NBA API statistics. Players without significant PnR usage were filtered out.
-Scoring Engine Development: A weighted scoring model was developed to evaluate players across three main categories:
-Pick-and-Roll Proficiency (40 points): Assessed based on Points Per Possession (PPP), Possession Percentage, Turnover Percentage, and Field Goal Percentage.
-Off-the-Dribble Shooting (40 points): Evaluated using Pull-up 3P% and 2P%, Pull-up Shot Volume (FGA Frequency), and Self-Creation Rate.
-Contract Value & Age (20 points): Scored based on projected salary affordability and age, prioritizing players in their prime years with flexible contracts.
-Player Ranking: Players were ranked based on their total combined score, providing a quantitative assessment of their fit as a backup PG.
+This project evaluates 2026 NBA free agent point guards to identify optimal **backup PG targets** under an **$18M salary cap**. The analysis prioritizes players who excel in **pick-and-roll offense** and **off-the-dribble shot creation**, while accounting for **age** and **contract value** to ensure long-term roster fit.
 
-Key Findings
-Initial analysis identified 88 affordable free agent guards under the $18M cap.
-After filtering for PnR usage and matching NBA API data, a candidate pool of 55 players was established.
-The scoring engine effectively distinguished players based on their statistical profiles and contract and age considerations.
-The top-ranked candidates demonstrated a strong balance across all scoring categories: PnR efficiency, off-the-dribble scoring ability, and favorable age and salary profiles.
-Collin Sexton	75	28	33	14	17,737,500	26	0.932	0.386
-Nah'Shon Hyland stands out as the top candidate, combining strong PnR and pull-up shooting metrics with an excellent value proposition given his age and projected salary. Other high-ranking players like Collin Gillespie and Gary Trent Jr. also present compelling cases. The visualization further highlights the strengths and weaknesses of the top candidates across key decision-making metrics.
+## Data Sources
+
+* **Spotrac** — 2026 free agent guard list and projected salaries
+* **nba_api** — 2024–25 season player data:
+
+  * *SynergyPlayTypes*: Pick-and-roll efficiency and usage
+  * *PlayerDashPtShots*: Pull-up shooting efficiency and volume
+  * *LeagueDashPlayerStats*: Age, games played, and minutes
+
+## Methodology
+
+1. **Salary Filtering**
+   Filtered free agent guards with projected salaries ≤ $18M.
+
+2. **Player Matching**
+   Mapped free agents to NBA player IDs using fuzzy matching and manual corrections.
+
+3. **Stat Collection & Cleaning**
+   Retrieved PnR and pull-up shooting metrics; removed players with minimal PnR usage.
+
+4. **Scoring Model**
+   Built a weighted scoring engine (100-point scale):
+
+   * **Pick-and-Roll Proficiency (40%)**
+     PPP, usage, turnover rate, FG%
+   * **Off-the-Dribble Shooting (40%)**
+     Pull-up 3P%/2P%, shot volume, self-creation rate
+   * **Contract Value & Age (20%)**
+     Salary efficiency and prime-age preference
+
+5. **Ranking**
+   Players ranked by total score to quantify backup PG fit.
+
+## Results
+
+* **88** free agent guards identified under the salary cap
+* **55** players remained after PnR usage and data validation filters
+* Top candidates showed strong balance across PnR efficiency, shot creation, and value
+
+**Key Insight:**
+**Nah’Shon Hyland** emerged as the top target, combining strong PnR and pull-up shooting metrics with excellent age and contract value. Other notable candidates include **Collin Gillespie** and **Gary Trent Jr.**
+
+## Takeaway
+
+This framework provides a repeatable, data-driven approach to evaluating NBA role players by aligning on-court impact with salary and roster construction constraints—specifically tailored for backup point guard decision-making.
+* Rewrite it for a **resume project description**
+* Tighten language for **NBA/front-office style** documentation
