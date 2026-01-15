@@ -51,5 +51,3 @@ This project evaluates 2026 NBA free agent point guards to identify optimal **ba
 ## Takeaway
 
 This framework provides a repeatable, data-driven approach to evaluating NBA role players by aligning on-court impact with salary and roster construction constraints—specifically tailored for backup point guard decision-making.
-* Rewrite it for a **resume project description**
-* Tighten language for **NBA/front-office style** documentation
